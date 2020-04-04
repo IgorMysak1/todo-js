@@ -159,14 +159,16 @@
 		align-items: center;
 	}	
 }
-.taskP{
+.taskP,
+.task p{
 	margin-left: 25px;
 	font-size: 22px;
 	font-family: 'Trade Winds';
 	color: #d2d9e3;
 }
 @media(max-width: 991px){
-	.taskP{
+	.taskP,
+	.task p{
 		margin-left: 35px;
 		font-size: 55px;
 		font-family: 'Trade Winds';
