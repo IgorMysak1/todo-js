@@ -4,15 +4,15 @@
 	box-sizing: border-box;	
 }
 .container{
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(62deg, #3c3b40 0%, #bab7c8 100%);
+	background-color: #2f323b;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+
+
 }
 .main_list{
-	height: 90vh;
 	width: 500px;
 	background-color: #0e0d13;
 	display: flex;
@@ -21,10 +21,12 @@
 	border-radius: 10px;
 	margin: 20px 50px;
 	padding-top: 20px;
+	box-shadow: 0 0 25px 20px #504f56;
 
 }
 @media(max-width: 991px){
 	.main_list{
+		height: auto;
 		width: 95%;
 		background-color: #0e0d13;
 		display: flex;
@@ -36,6 +38,7 @@
 }
 @media(max-width: 762px){
 	.main_list{
+		height: auto;
 		width: 100%;
 		background-color: #0e0d13;
 		display: flex;
@@ -47,6 +50,7 @@
 }
 @media(max-width: 544px){
 	.main_list{
+		height: auto;
 		width: 100%;
 		background-color: #0e0d13;
 		display: flex;
@@ -78,7 +82,7 @@
 }
 .info_list{
 	width:85%;
-	padding: 30px;
+	padding: 10px 30px 30px 30px;
 }
 @media(max-width: 544px){
 	.info_list{
@@ -99,7 +103,7 @@
 	height: 2px;
 	width: 75%;
 	margin: 0 auto;
-	background-color: #00000070;
+	background-color: #2f323b;
 	margin-top: 20px;
 }
 @media(max-width: 991px){
@@ -107,15 +111,15 @@
 		height: 2px;
 		width: 85%;
 		margin: 0 auto;
-		background-color: #00000070;
+		background-color: #2f323b;
 		margin-top: 20px;
 	}	
 }
 .task{
-	height: 45px;
+	height: 60px;
 	width: 100%;
 	background-color: #1f1e2c;
-	margin: 10px 0;
+	margin: 20px 0;
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
@@ -137,32 +141,10 @@
 		margin: 10px;
 	}	
 }
-.make_task{
-	height: 45px;
-	width: 100%;
-	background-color: #1f1e2c;
-	margin: 10px 0;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-@media(max-width: 991px){
-	.make_task{
-		height: 130px;
-		width: 90%;
-		background-color: #1f1e2c;
-		margin: 10px 0;
-		border-radius: 10px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}	
-}
+
 .taskP,
 .task p{
-	margin-left: 25px;
-	font-size: 22px;
+	font-size: 35px;
 	font-family: 'Trade Winds';
 	color: #a96a10;
 }
@@ -194,8 +176,9 @@
 	}
 }
 .img_cross{
-	height: 25px;
-	width: 25px;
+	height: 30px;
+	width: 33px;
+	margin-right: 7px;
 }
 @media(max-width: 991px){
 	.img_cross{
@@ -204,8 +187,8 @@
 	}
 }
 .img_pen{
-	height: 25px;
-	width: 25px;
+	height: 30px;
+	width: 33px;
 	margin-right: 7px;
 }
 @media(max-width: 991px){
@@ -216,51 +199,74 @@
 	}
 }
 .plus{
-	color: red;
 	height: 30px;
 	width: 30px;
 }
+.block_plus{
+	height: 50px;
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 12px;
+    background: linear-gradient(145deg, #4b475d, #0e0d13);
+    box-shadow: 9px 9px 18px #242426, -9px -9px 18px #3e3c44
+}
+@media(max-width: 991px){
+	.block_plus{
+		height: 80px;
+		width: 80px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 12px;
+	    background: linear-gradient(145deg, #4b475d, #0e0d13);
+	    box-shadow: 9px 9px 18px #242426, -9px -9px 18px #3e3c44
+	}
+}
 @media(max-width: 991px){
 	.plus{
-		color: red;
 		height: 60px;
 		width: 60px;
 	}
 }
 .taskInput{
-	height: 30px;
-	background-color: #8bb1d5;
+	height: 35px;
+	width: 250px;
+	background-color: #2f323b;
 	border-radius: 10px;
 	border: none;
 	text-decoration: none;
 	outline: none;
 	padding-left: 5px;
-	color: #ecf9ff;
+	color: #a96a10;
+	font-size: 30px;
 }
 @media(max-width: 442px){
 	.taskInput{
 		height: 30px;
 		width: 150px;
-		background-color: #8bb1d5;
+		background-color: #2f323b;
 		border-radius: 10px;
 		border: none;
 		text-decoration: none;
 		outline: none;
 		padding-left: 5px;
-		color: #ecf9ff;
+		color: #a96a10;
+		font-size: 3030px;
 	}	
 }
 @media(max-width: 991px){
 	.taskInput{
 		height: 60px;
 		width: 400px;
-		background-color: #8bb1d5;
+		background-color: #2f323b;
 		border-radius: 10px;
 		border: none;
 		text-decoration: none;
 		outline: none;
 		padding-left: 5px;
-		color: #ecf9ff;
+		color: #a96a10;
 		font-size: 40px;
 	}	
 }
@@ -270,11 +276,12 @@
 	border: none;
 	outline: none;
 	text-decoration: none;
-	background-color: #46698c;
+	background-color: #2f323b;
 	cursor: pointer;
-	color: #8bb1d5;
+	color: #a96a10;
 	font-size: 22px;
 	margin-right: 10px;
+	border-radius: 7px;
 }
 @media(max-width: 991px){
 	.task button{
@@ -309,4 +316,9 @@
 		height: 50px;
 		width: 60px;
 	}	
+}
+.motivateText{
+	font-size: 30px;
+	color: #a96a10;
+	margin: 0 auto;
 }
