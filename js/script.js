@@ -118,7 +118,7 @@ createTasks();
 					task.prepend(delCross);
 					let motivateText = document.createElement('p');
 					motivateText.classList.add('motivateText');
-					motivateText.textContent = "Тут мало бути завдання"
+					motivateText.textContent = "Криворукий інвалід , тепер видаляй"
 					task.prepend(motivateText);					
 					delCross.addEventListener('click' ,function(){
 						task.removeChild(delCross);
