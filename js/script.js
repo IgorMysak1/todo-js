@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				let task = document.createElement('div');
 				task.classList.add('task');
 				let taskName = document.createElement('p');
-
+				taskName.classList.add('taskName');
 				taskName.textContent = localStorage.getItem('Tasks').split(',')[i];
 				task.prepend(taskName);
 				allTask.prepend(task);
@@ -112,8 +112,6 @@ createTasks();
 		function aaa(readyBtn , taskInput){
 			readyBtn.addEventListener('click' ,function(){
 				if(taskInput.value == ""){
-
-
 					let delCross = document.createElement('img');	 
 					delCross.classList.add('img_cross');
 					delCross.setAttribute('src' , 'img/cross_orange.png');
