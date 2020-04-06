@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				let pen = document.createElement('img');
 				pen.classList.add('img_pen');
-				pen.setAttribute('src' , 'img/pen.png');
+				pen.setAttribute('src' , 'img/pen_orange.png');
 				change.append(pen);	
 
 				let cross = document.createElement('img');
 				cross.classList.add('img_cross');
-				cross.setAttribute('src' , 'img/cross.png');
+				cross.setAttribute('src' , 'img/cross_orange.png');
 				change.append(cross);
 				function edit(pen){
 					pen.addEventListener('click' ,function(){
@@ -140,7 +140,7 @@ createTasks();
 
 				let pen = document.createElement('img');
 				pen.classList.add('img_pen');
-				pen.setAttribute('src' , 'img/pen.png');
+				pen.setAttribute('src' , 'img/pen_orange.png');
 				change.append(pen);	
 				function edit(pen){
 					pen.addEventListener('click' ,function(){	
@@ -178,7 +178,7 @@ createTasks();
 				edit(pen);
 				let cross = document.createElement('img');
 				cross.classList.add('img_cross');
-				cross.setAttribute('src' , 'img/cross.png');
+				cross.setAttribute('src' , 'img/cross_orange.png');
 				change.append(cross);
 				function del(cross){
 					cross.addEventListener('click' , function(){
