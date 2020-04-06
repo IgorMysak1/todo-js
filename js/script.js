@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 						task.removeChild(taskName);
 						change.removeChild(cross);
 						change.removeChild(pen);
-						task.classList.remove('make_task');
-						task.classList.add('task');
+						// task.classList.remove('make_task');
+						// task.classList.add('task');
 						let tick = document.createElement('img');
 						tick.classList.add('tick');
 						tick.setAttribute('src' , 'img/tick.png');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						new_taskInput.classList.add('taskInput');
 						task.prepend(new_taskInput);
 						new_taskInput.value = taskName.textContent;
-					
+						
 						function tick1(){
 							tick.addEventListener('click' ,function(){
 								let bbb = new_taskInput.value;
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 createTasks();
 
 
-	document.querySelector('.plus').addEventListener('click' ,function(){
+	document.querySelector('.block_plus').addEventListener('click' ,function(){
 		//craete block (task)
 		let task = document.createElement('div');
 		task.classList.add('task');
@@ -99,9 +99,9 @@ createTasks();
 		taskInput.classList.add('taskInput');
 		task.prepend(taskInput);
 		//create button in task
-		let readyBtn = document.createElement('button');
-		readyBtn.textContent = "Готово";
-		readyBtn.classList.add('btn_ready');
+		let readyBtn = document.createElement('img');
+		readyBtn.classList.add('tick');
+		readyBtn.setAttribute('src' , 'img/tick_orange.png');
 		task.append(readyBtn);
 
 		// taskInput.addEventListener("keydown", function() {
@@ -111,8 +111,25 @@ createTasks();
 		// });
 		function aaa(readyBtn , taskInput){
 			readyBtn.addEventListener('click' ,function(){
-				task.classList.remove('task');
-				task.classList.add('make_task');
+				if(taskInput.value == ""){
+
+
+					let delCross = document.createElement('img');	 
+					delCross.classList.add('img_cross');
+					delCross.setAttribute('src' , 'img/cross_orange.png');
+					task.prepend(delCross);
+					let motivateText = document.createElement('p');
+					motivateText.classList.add('motivateText');
+					motivateText.textContent = "Тут мало бути завдання"
+					task.prepend(motivateText);					
+					delCross.addEventListener('click' ,function(){
+						task.removeChild(delCross);
+						task.removeChild(motivateText);
+						allTask.removeChild(task);
+					});
+				};
+
+	
 				let val = taskInput.value;
 
 
@@ -158,7 +175,7 @@ createTasks();
 						change.removeChild(pen);	
 						let tick = document.createElement('img');
 						tick.classList.add('tick');
-						tick.setAttribute('src' , 'img/tick.png');
+						tick.setAttribute('src' , 'img/tick_orange.png');
 						task.append(tick);
 						function tick1(tick){
 							tick.addEventListener('click' ,function(){
@@ -180,6 +197,7 @@ createTasks();
 				cross.classList.add('img_cross');
 				cross.setAttribute('src' , 'img/cross_orange.png');
 				change.append(cross);
+
 				function del(cross){
 					cross.addEventListener('click' , function(){
 						let recievArr = localStorage.getItem('Tasks').split(',');
@@ -191,10 +209,11 @@ createTasks();
 					});
 					
 				};
-				del(cross)
+				del(cross);
 			});
 		}
 		aaa(readyBtn , taskInput);
+
 	});
 
 
