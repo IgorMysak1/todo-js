@@ -143,14 +143,14 @@
 }
 
 .taskP,
-.task p{
+.taskName{
 	font-size: 35px;
 	font-family: 'Trade Winds';
 	color: #a96a10;
 }
 @media(max-width: 991px){
 	.taskP,
-	.task p{
+	.taskName{
 		margin-left: 35px;
 		font-size: 55px;
 		font-family: 'Trade Winds';
@@ -177,7 +177,7 @@
 }
 .img_cross{
 	height: 30px;
-	width: 33px;
+	width: 35px;
 	margin-right: 7px;
 }
 @media(max-width: 991px){
@@ -188,7 +188,7 @@
 }
 .img_pen{
 	height: 30px;
-	width: 33px;
+	width: 35px;
 	margin-right: 7px;
 }
 @media(max-width: 991px){
@@ -318,7 +318,27 @@
 	}	
 }
 .motivateText{
-	font-size: 30px;
+	font-size: 26px;
 	color: #a96a10;
 	margin: 0 auto;
 }
+@media(max-width: 991px){
+	.motivateText{
+		font-size: 50px;
+		color: #a96a10;
+		margin: 0 auto;
+	}
+}
+/*scrollbar*/
+::-webkit-scrollbar{
+	width: 15px;
+}
+::-webkit-scrollbar-track{
+	background-color: #1f1e2c;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #a96a10;
+	border: 3px solid #1f1e2c
+}
+
