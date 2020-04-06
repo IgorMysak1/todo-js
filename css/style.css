@@ -6,7 +6,7 @@
 .container{
 	height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+	background-image: linear-gradient(62deg, #3c3b40 0%, #bab7c8 100%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,7 +14,7 @@
 .main_list{
 	height: 90vh;
 	width: 500px;
-	background-color: #7cbbf9;
+	background-color: #0e0d13;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -26,7 +26,7 @@
 @media(max-width: 991px){
 	.main_list{
 		width: 95%;
-		background-color: #7cbbf9;
+		background-color: #0e0d13;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -37,7 +37,7 @@
 @media(max-width: 762px){
 	.main_list{
 		width: 100%;
-		background-color: #7cbbf9;
+		background-color: #0e0d13;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -48,7 +48,7 @@
 @media(max-width: 544px){
 	.main_list{
 		width: 100%;
-		background-color: #7cbbf9;
+		background-color: #0e0d13;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -66,7 +66,7 @@
 }
 .list_title{
 	font-size: 35px;
-	color: #24528a;
+	color: #a96a10;
 	font-family: 'Permanent Marker';
 }
 @media(max-width: 991px){
@@ -114,7 +114,7 @@
 .task{
 	height: 45px;
 	width: 100%;
-	background-color: #00000070;
+	background-color: #1f1e2c;
 	margin: 10px 0;
 	border-radius: 10px;
 	display: flex;
@@ -126,7 +126,7 @@
 	.task{
 		height: 130px;
 		width: 90%;
-		background-color: #00000070;
+		background-color: #1f1e2c;
 		margin: 10px 0;
 		border-radius: 10px;
 		display: flex;
@@ -140,7 +140,7 @@
 .make_task{
 	height: 45px;
 	width: 100%;
-	background-color: #00000070;
+	background-color: #1f1e2c;
 	margin: 10px 0;
 	border-radius: 10px;
 	display: flex;
@@ -151,7 +151,7 @@
 	.make_task{
 		height: 130px;
 		width: 90%;
-		background-color: #00000070;
+		background-color: #1f1e2c;
 		margin: 10px 0;
 		border-radius: 10px;
 		display: flex;
@@ -164,7 +164,7 @@
 	margin-left: 25px;
 	font-size: 22px;
 	font-family: 'Trade Winds';
-	color: #d2d9e3;
+	color: #a96a10;
 }
 @media(max-width: 991px){
 	.taskP,
@@ -216,13 +216,13 @@
 	}
 }
 .plus{
-	color: #00000070;
+	color: red;
 	height: 30px;
 	width: 30px;
 }
 @media(max-width: 991px){
 	.plus{
-		color: #00000070;
+		color: red;
 		height: 60px;
 		width: 60px;
 	}
