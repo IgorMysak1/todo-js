@@ -48,22 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
 						
 						function tick1(){
 							tick.addEventListener('click' ,function(){
+								console.log('aaaa');
 								let bbb = new_taskInput.value;
-								console.log(bbb);
+								
 								task.removeChild(tick);
 								task.removeChild(new_taskInput);
 								task.prepend(change);
 								task.prepend(taskName);
 								change.append(pen);
 								change.append(cross);
-								
+								taskName.textContent = bbb;	
 								let recievArr = localStorage.getItem('Tasks').split(',');
+								console.log(recievArr);
 								let ind = recievArr.indexOf(taskName.textContent); 
 								console.log(ind);
 								recievArr.splice(ind , 1 , bbb);
-								taskName.textContent = bbb;
-								localStorage.setItem('Tasks', recievArr);									
+								
+								localStorage.setItem('Tasks', recievArr);	
+							console.log('aaaa');
 							});
+							
 						}
 						tick1();	
 					});
@@ -134,10 +138,10 @@ createTasks();
 				task.removeChild(readyBtn);		
 				task.removeChild(taskInput);
 
-				let taskP = document.createElement('p');
-				taskP.classList.add('taskP');
+				let taskName = document.createElement('p');
+				taskName.classList.add('taskName');
 				if (val.length < 1) return;
-				taskP.textContent = val;
+				taskName.textContent = val;
 
 				let arr = [];
 				arr.push(localStorage.getItem('Tasks'));
@@ -148,7 +152,7 @@ createTasks();
 				tasks = arr;
 				localStorage.setItem('Tasks', tasks);
 
-				task.append(taskP);
+				task.append(taskName);
 				let change = document.createElement('div');
 				change.classList.add('change');
 				task.append(change);
@@ -159,32 +163,42 @@ createTasks();
 				change.append(pen);	
 				function edit(pen){
 					pen.addEventListener('click' ,function(){	
+						
 						change.removeChild(cross);
+						change.removeChild(pen);
 						task.removeChild(change);
-						task.classList.remove('make_task');
-						task.classList.add('task');
+
 						let new_taskInput = document.createElement('input');
 						new_taskInput.classList.add('taskInput');
 						task.prepend(new_taskInput);
-						let val_ready_task = taskP.textContent;
+						let val_ready_task = taskName.textContent;
 						new_taskInput.value = val_ready_task;
-
-						task.removeChild(taskP);	
-						change.removeChild(pen);	
+						task.removeChild(taskName);
+							
+							
 						let tick = document.createElement('img');
 						tick.classList.add('tick');
 						tick.setAttribute('src' , 'img/tick_orange.png');
 						task.append(tick);
 						function tick1(tick){
 							tick.addEventListener('click' ,function(){
-								task.prepend(change);
+								console.log('aaaa');
 								let bbb = new_taskInput.value;
-								task.removeChild(new_taskInput);
+								
 								task.removeChild(tick);
-								taskP.textContent = bbb;
-								task.prepend(taskP);
-								change.append(pen);	
+								task.removeChild(new_taskInput);
+								task.prepend(change);
+								task.prepend(taskName);
+								change.append(pen);
 								change.append(cross);
+								taskName.textContent = bbb;	
+								let recievArr = localStorage.getItem('Tasks').split(',');
+								console.log(recievArr);
+								let ind = recievArr.indexOf(taskName.textContent); 
+								console.log(ind);
+								recievArr.splice(ind , 1 , bbb);
+								
+								localStorage.setItem('Tasks', recievArr);
 							});
 						};
 						tick1(tick);
@@ -199,7 +213,7 @@ createTasks();
 				function del(cross){
 					cross.addEventListener('click' , function(){
 						let recievArr = localStorage.getItem('Tasks').split(',');
-						let ind = recievArr.indexOf(taskP.textContent); 
+						let ind = recievArr.indexOf(taskName.textContent); 
 						recievArr.splice(ind , 1);
 						console.log(recievArr);
 						localStorage.setItem('Tasks', recievArr);
