@@ -12,10 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				let taskName = document.createElement('p');
 				taskName.classList.add('taskName');
 				taskName.textContent = localStorage.getItem('Tasks').split(',')[i];
-				task.prepend(taskName);
+				
 				allTask.prepend(task);
 				//
-				
+				let checkboxTick = document.createElement('div');
+				checkboxTick.classList.add('checkboxTick');
+				task.append(checkboxTick);
+				checkboxTick.append(taskName);
+
+				let checked = document.createElement('div');
+				checked.classList.add('checked');
+				checkboxTick.prepend(checked);
 				let change = document.createElement('div');
 				change.classList.add('change');
 				task.append(change);
@@ -32,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				function edit(pen){
 					pen.addEventListener('click' ,function(){
 						task.removeChild(change);
-						task.removeChild(taskName);
+						checkboxTick.removeChild(taskName);
+						checkboxTick.removeChild(checked);
+						task.removeChild(checkboxTick);
 						change.removeChild(cross);
 						change.removeChild(pen);
 						// task.classList.remove('make_task');
@@ -48,24 +57,26 @@ document.addEventListener('DOMContentLoaded', () => {
 						
 						function tick1(){
 							tick.addEventListener('click' ,function(){
-								console.log('aaaa');
+								
 								let bbb = new_taskInput.value;
 								
 								task.removeChild(tick);
 								task.removeChild(new_taskInput);
 								task.prepend(change);
-								task.prepend(taskName);
+								task.prepend(checkboxTick);
+								checkboxTick.append(taskName);
+								checkboxTick.prepend(checked);	
 								change.append(pen);
 								change.append(cross);
 								taskName.textContent = bbb;	
 								let recievArr = localStorage.getItem('Tasks').split(',');
-								console.log(recievArr);
+								
 								let ind = recievArr.indexOf(taskName.textContent); 
-								console.log(ind);
+								
 								recievArr.splice(ind , 1 , bbb);
 								
 								localStorage.setItem('Tasks', recievArr);	
-							console.log('aaaa');
+							
 							});
 							
 						}
@@ -86,6 +97,25 @@ document.addEventListener('DOMContentLoaded', () => {
 					
 				};
 				del(cross);
+				function checked1(){
+					let num = 0;
+					checked.addEventListener('click' , function(){
+						if( num == 0){
+							let checkedImg = document.createElement('img');
+							checkedImg.setAttribute('src' , 'img/checkboxTick_orange.png');
+							checkedImg.classList.add('checkedImg');
+							checked.prepend(checkedImg);
+							taskName.style.textDecoration = 'line-through';
+							num = 1;
+						}else if(num == 1){
+							let a = document.querySelector('.checked img');
+							checked.removeChild(a);
+							taskName.style.textDecoration = 'none';
+							num = 0;
+						}
+					});
+				};
+				checked1();
 			};
 		};
 	};
@@ -134,10 +164,8 @@ createTasks();
 	
 				let val = taskInput.value;
 
-
 				task.removeChild(readyBtn);		
 				task.removeChild(taskInput);
-
 				let taskName = document.createElement('p');
 				taskName.classList.add('taskName');
 				if (val.length < 1) return;
@@ -152,18 +180,27 @@ createTasks();
 				tasks = arr;
 				localStorage.setItem('Tasks', tasks);
 
-				task.append(taskName);
+				let checkboxTick = document.createElement('div');
+				checkboxTick.classList.add('checkboxTick');
+				task.append(checkboxTick);
+				checkboxTick.append(taskName);
+
+				let checked = document.createElement('div');
+				checked.classList.add('checked');
+				checkboxTick.prepend(checked);
+
 				let change = document.createElement('div');
 				change.classList.add('change');
 				task.append(change);
-
 				let pen = document.createElement('img');
 				pen.classList.add('img_pen');
 				pen.setAttribute('src' , 'img/pen_orange.png');
 				change.append(pen);	
 				function edit(pen){
 					pen.addEventListener('click' ,function(){	
-						
+						checkboxTick.removeChild(taskName);
+						checkboxTick.removeChild(checked);
+						task.removeChild(checkboxTick);
 						change.removeChild(cross);
 						change.removeChild(pen);
 						task.removeChild(change);
@@ -173,7 +210,7 @@ createTasks();
 						task.prepend(new_taskInput);
 						let val_ready_task = taskName.textContent;
 						new_taskInput.value = val_ready_task;
-						task.removeChild(taskName);
+					
 							
 							
 						let tick = document.createElement('img');
@@ -188,7 +225,10 @@ createTasks();
 								task.removeChild(tick);
 								task.removeChild(new_taskInput);
 								task.prepend(change);
-								task.prepend(taskName);
+								
+								task.prepend(checkboxTick);
+								checkboxTick.append(taskName);
+								checkboxTick.prepend(checked);
 								change.append(pen);
 								change.append(cross);
 								taskName.textContent = bbb;	
@@ -209,7 +249,29 @@ createTasks();
 				cross.classList.add('img_cross');
 				cross.setAttribute('src' , 'img/cross_orange.png');
 				change.append(cross);
-
+				function checked1(){
+					let num = 0;
+					checked.addEventListener('click' , function(){
+						
+						let checkedImg = document.createElement('img');
+						checkedImg.setAttribute('src' , 'img/checkboxTick_orange.png');
+						checkedImg.classList.add('checkedImg');
+						if( num == 0){
+							let checkedImg = document.createElement('img');
+							checkedImg.setAttribute('src' , 'img/checkboxTick_orange.png');
+							checkedImg.classList.add('checkedImg');
+							checked.prepend(checkedImg);
+							taskName.style.textDecoration = 'line-through';
+							num = 1;
+						}else if(num == 1){
+							let a = document.querySelector('.checked img');
+							checked.removeChild(a);
+							taskName.style.textDecoration = 'none';
+							num = 0;
+						}
+					});
+				}
+				checked1();
 				function del(cross){
 					cross.addEventListener('click' , function(){
 						let recievArr = localStorage.getItem('Tasks').split(',');
