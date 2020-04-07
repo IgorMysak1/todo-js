@@ -162,6 +162,12 @@
 	width: 20px;
 }
 @media(max-width: 991px){
+	.checkedImg{
+		height: 50px;
+		width: 50px;
+	}	
+}
+@media(max-width: 991px){
 	.checked{
 		height: 70px;
 		min-width: 70px;
