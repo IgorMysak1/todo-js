@@ -11,7 +11,7 @@
 	justify-content: center;
 }
 .main_list{
-	width: 500px;
+	width: 600px;
 	background-color: #0e0d13;
 	display: flex;
 	flex-direction: column;
@@ -140,16 +140,48 @@
 	}	
 }
 
-.taskP,
+.checkboxTick{
+	min-width: 100px;
+	margin-right: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.checked{
+	height: 30px;
+	min-width: 30px;
+	border: 2px solid #2f323b;
+	background-color: #0e0d13;
+	margin-right: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.checkedImg{
+	height: 20px;
+	width: 20px;
+}
+@media(max-width: 991px){
+	.checked{
+		height: 70px;
+		min-width: 70px;
+		border: 2px solid #2f323b;
+		background-color: #0e0d13;
+		margin-right: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}	
+}
 .taskName{
 	font-size: 35px;
 	font-family: 'Trade Winds';
 	color: #a96a10;
 	overflow: auto;
-	margin-right: 30px;
+	
 }
+
 @media(max-width: 991px){
-	.taskP,
 	.taskName{
 		margin-left: 35px;
 		font-size: 55px;
@@ -161,7 +193,7 @@
 }
 .change{
 	height: 40px;
-	width: 60px;
+	width: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -343,16 +375,16 @@
 	background-color: #a96a10;
 	border: 3px solid #1f1e2c
 }
-.taskP,
+
 .taskName::-webkit-scrollbar{
 	height: 5px;
 	width: 3px;
 }
-.taskP,
+
 .taskName::-webkit-scrollbar-track{
 	background-color: #1f1e2c;
 }
-.taskP,
+
 .taskName::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 	background-color: #a96a10;
