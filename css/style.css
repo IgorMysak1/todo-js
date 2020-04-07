@@ -9,8 +9,6 @@
 	background-color: #2f323b;
 	display: flex;
 	justify-content: center;
-
-
 }
 .main_list{
 	width: 500px;
@@ -147,6 +145,8 @@
 	font-size: 35px;
 	font-family: 'Trade Winds';
 	color: #a96a10;
+	overflow: auto;
+	margin-right: 30px;
 }
 @media(max-width: 991px){
 	.taskP,
@@ -155,6 +155,8 @@
 		font-size: 55px;
 		font-family: 'Trade Winds';
 		color: #a96a10;
+		overflow: auto;
+		margin-right: 30px;
 	}	
 }
 .change{
@@ -330,15 +332,29 @@
 	}
 }
 /*scrollbar*/
-::-webkit-scrollbar{
+.container::-webkit-scrollbar{
 	width: 15px;
 }
-::-webkit-scrollbar-track{
+.container::-webkit-scrollbar-track{
 	background-color: #1f1e2c;
 }
-::-webkit-scrollbar-thumb {
+.container::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 	background-color: #a96a10;
 	border: 3px solid #1f1e2c
+}
+.taskP,
+.taskName::-webkit-scrollbar{
+	height: 5px;
+	width: 3px;
+}
+.taskP,
+.taskName::-webkit-scrollbar-track{
+	background-color: #1f1e2c;
+}
+.taskP,
+.taskName::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #a96a10;
 }
 
