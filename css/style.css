@@ -184,6 +184,7 @@
 	font-family: 'Trade Winds';
 	color: #a96a10;
 	overflow: auto;
+	white-space: pre;
 	
 }
 
@@ -195,6 +196,7 @@
 		color: #a96a10;
 		overflow: auto;
 		margin-right: 30px;
+		white-space: pre;
 	}	
 }
 .change{
